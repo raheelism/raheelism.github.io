@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Raheel Anwar - Senior Research Officer</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa; /* Very light gray for a clean look */
+            color: #343a40; /* Darker text for professionalism */
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+        .main-layout {
+            display: flex;
+            min-height: 100vh;
+        }
+        .sidebar {
+            width: 280px; /* Fixed width for sidebar */
+            background-color: #ffffff;
+            box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05); /* Subtle shadow on the right */
+            padding: 30px;
+            position: sticky;
+            top: 0;
+            align-self: flex-start; /* Stick to the top */
+            height: 100vh; /* Full height */
+            overflow-y: auto; /* Scrollable if content overflows */
+            border-right: 1px solid #e9ecef; /* Subtle border */
+        }
+        .content-area {
+            flex-grow: 1;
+            padding: 30px 40px; /* Padding for main content */
+            max-width: calc(100% - 280px); /* Adjust max-width for content area */
+        }
+        .section-title {
+            border-bottom: 2px solid #0056b3; /* Deeper blue for academic tone */
+            padding-bottom: 8px;
+            margin-bottom: 24px;
+            color: #212529; /* Even darker text for titles */
+            font-weight: 600; /* Slightly bolder */
+        }
+        .card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            padding: 30px;
+            margin-bottom: 40px;
+            border: 1px solid #e9ecef;
+        }
+        .link-icon {
+            color: #007bff;
+            margin-right: 8px;
+        }
+        .project-card {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+            padding: 20px;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+            border: 1px solid #dee2e6;
+        }
+        .project-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        }
+        .project-card h3 {
+            color: #0056b3;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .project-card p {
+            color: #495057;
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+            flex-grow: 1;
+        }
+        .project-card .tools {
+            font-size: 0.85rem;
+            color: #6c757d;
+            margin-top: auto;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background-color 0.2s ease-in-out;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        .btn-secondary {
+            background-color: #e9ecef;
+            color: #495057;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background-color 0.2s ease-in-out;
+        }
+        .btn-secondary:hover {
+            background-color: #dee2e6;
+        }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 768px) {
+            .main-layout {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                position: relative;
+                height: auto;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Shadow at bottom */
+                border-right: none;
+                border-bottom: 1px solid #e9ecef;
+            }
+            .content-area {
+                max-width: 100%;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="main-layout">
+        <!-- Left Sidebar -->
+        <aside class="sidebar">
+            <div class="text-center mb-8">
+                <h1 class="text-3xl font-extrabold text-gray-900 mb-1">Muhammad Raheel Anwar</h1>
+                <p class="text-lg text-gray-700">Senior Research Officer</p>
+                <p class="text-md text-gray-600">Generative AI & LLM Specialist</p>
+            </div>
+
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold text-gray-800 mb-3 section-title">Contact Info</h3>
+                <ul class="space-y-2 text-gray-700">
+                    <li>
+                        <a href="mailto:pingmra@gmail.com" class="hover:underline flex items-center">
+                            <i class="fas fa-envelope link-icon"></i> pingmra@gmail.com
+                        </a>
+                    </li>
+                    <li>
+                        <a href="tel:+923029802838" class="hover:underline flex items-center">
+                            <i class="fas fa-phone link-icon"></i> +92 302 9802838
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.github.com/raheelism" target="_blank" class="hover:underline flex items-center">
+                            <i class="fab fa-github link-icon"></i> github.com/raheelism
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/itxmra" target="_blank" class="hover:underline flex items-center">
+                            <i class="fab fa-linkedin link-icon"></i> linkedin.com/in/itxmra
+                        </a>
+                    </li>
+                    <li>
+                        <i class="fas fa-map-marker-alt link-icon"></i> Islamabad, Pakistan
+                    </li>
+                </ul>
+            </div>
+
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold text-gray-800 mb-3 section-title">Sections</h3>
+                <ul class="space-y-2">
+                    <li><a href="#about" class="text-gray-700 hover:text-blue-600 font-medium">About Me</a></li>
+                    <li><a href="#education" class="text-gray-700 hover:text-blue-600 font-medium">Education</a></li>
+                    <li><a href="#experience" class="text-gray-700 hover:text-blue-600 font-medium">Experience</a></li>
+                    <li><a href="#skills" class="text-gray-700 hover:text-blue-600 font-medium">Skills & Expertise</a></li>
+                    <li><a href="#leadership" class="text-gray-700 hover:text-blue-600 font-medium">Leadership & Activities</a></li>
+                    <li><a href="#publications" class="text-gray-700 hover:text-blue-600 font-medium">Publications</a></li>
+                    <li><a href="#research-projects" class="text-gray-700 hover:text-blue-600 font-medium">Research Projects</a></li>
+                    <li><a href="#other-projects" class="text-gray-700 hover:text-blue-600 font-medium">Other Projects</a></li>
+                    <li><a href="#certifications" class="text-gray-700 hover:text-blue-600 font-medium">Certifications</a></li>
+                    <li><a href="#references" class="text-gray-700 hover:text-blue-600 font-medium">References</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Right Main Content Area -->
+        <main class="content-area">
+
+            <!-- About Section -->
+            <section id="about" class="card">
+                <h2 class="text-3xl font-bold section-title">About Me</h2>
+                <p class="text-lg text-gray-700">
+                    As a Senior Research Officer, my work is centered on advancing the frontiers of Artificial Intelligence, with a particular focus on <strong class="text-blue-800">Multimodal Large Language Models (LLMs), Vision-Language Models (VLMs), and Agentic AI Systems</strong>. I am dedicated to contributing to innovative projects that bridge cutting-edge research with practical applications, particularly in the development of <strong class="text-blue-800">multi-agent systems, sophisticated vision understanding, and intelligent automation solutions</strong>. My objective is to build robust and impactful AI systems that address complex real-world challenges and contribute significantly to the academic and industrial landscape of AI.
+                </p>
+            </section>
+
+            <!-- Education Section -->
+            <section id="education" class="card">
+                <h2 class="text-3xl font-bold section-title">Education</h2>
+                <div class="text-gray-700 space-y-4">
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900">Masters in Computer Science <span class="text-gray-600 text-base font-normal">| National University of Sciences and Technology (NUST), Islamabad, Pakistan</span></h3>
+                        <p class="text-gray-600 text-sm mb-1">Oct 2022 – Present | GPA 3.63</p>
+                        <ul class="list-disc list-inside ml-6">
+                            <li><strong class="text-gray-900">Thesis:</strong> MCQs generation using large language models: A Mixture-of-Agent Approach</li>
+                            <li><strong class="text-gray-900">Relevant Coursework:</strong> Generative AI, Deep Learning, Machine Learning, Blockchain</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900">Bachelors in Computer Science <span class="text-gray-600 text-base font-normal">| NFC IET Multan, Multan, Pakistan</span></h3>
+                        <p class="text-gray-600 text-sm mb-1">Oct 2016 – Sept 2020 | GPA 3.49</p>
+                        <ul class="list-disc list-inside ml-6">
+                            <li><strong class="text-gray-900">Projects:</strong> Believers Game (Unfinished) & Dynamic Shopping App (Flutter)</li>
+                            <li><strong class="text-gray-900">Relevant Coursework:</strong> Game Development, Mobile Development, OOP, Algorithms</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Experience Section -->
+            <section id="experience" class="card">
+                <h2 class="text-3xl font-bold section-title">Professional Experience</h2>
+                <div class="text-gray-700 space-y-4">
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900">Senior Research Officer <span class="text-gray-600 text-base font-normal">| NCAI NUST, Islamabad, Pakistan</span></h3>
+                        <p class="text-gray-600 text-sm mb-1">Mar 2025 – Present</p>
+                        <ul class="list-disc list-inside ml-6">
+                            <li>Leading and contributing to various Generative AI projects, encompassing RAG implementation, model training and fine-tuning, and the development of complete AI systems.</li>
+                            <li>Extensive experience in building and deploying intelligent chatbots and other advanced AI applications.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900">Senior Flutter Developer <span class="text-gray-600 text-base font-normal">| SPARKLEO TECH, Islamabad, Pakistan</span></h3>
+                        <p class="text-gray-600 text-sm mb-1">Mar 2024 – Aug 2024</p>
+                        <ul class="list-disc list-inside ml-6">
+                            <li>Developed three major Flutter projects: Umavoice, PlexCare, and SpectraScientific.</li>
+                            <li>Designed UI for Umavoice and integrated AI features, enhancing user experience.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900">Researcher <span class="text-gray-600 text-base font-normal">| IZBA - CAPABL, New York, USA (Remote)</span></h3>
+                        <p class="text-gray-600 text-sm mb-1">Sept 2022 – Mar 2024</p>
+                        <ul class="list-disc list-inside ml-6">
+                            <li>Developed web scraping scripts and automated data workflows, reducing manual effort.</li>
+                            <li>Cleaned and preprocessed large datasets, ensuring high-quality data for analysis.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900">Lecturer <span class="text-gray-600 text-base font-normal">| NFC IET University, Multan, Punjab</span></h3>
+                        <p class="text-gray-600 text-sm mb-1">Sept 2020 – Sept 2022</p>
+                        <ul class="list-disc list-inside ml-6">
+                            <li>Delivered lectures and hands-on training in Mobile and Game Development.</li>
+                            <li>Updated course curriculum to align with industry trends and mentored students on projects.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900">Software Engineer <span class="text-gray-600 text-base font-normal">| XUFIRE TECH, Multan, Punjab</span></h3>
+                        <p class="text-gray-600 text-sm mb-1">Dec 2020 – Aug 2021</p>
+                        <ul class="list-disc list-inside ml-6">
+                            <li>Developed Flutter applications (Complyform, Cosmos Redshift, PropertyX), ensuring high performance and user-friendly interfaces.</li>
+                            <li>Designed responsive UIs and integrated third-party APIs for enhanced functionality.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900">Software Engineer <span class="text-gray-600 text-base font-normal">| INFOTECH4IT, Lahore, Punjab</span></h3>
+                        <p class="text-gray-600 text-sm mb-1">Jun 2019 – Jul 2020</p>
+                        <ul class="list-disc list-inside ml-6">
+                            <li>Designed and implemented UI layouts, focusing on performance and responsiveness.</li>
+                            <li>Collaborated with senior developers to troubleshoot and refine designs.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section id="skills" class="card">
+                <h2 class="text-3xl font-bold section-title">Technical Expertise</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-700">
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Programming Languages:</h3>
+                        <ul class="list-disc list-inside ml-4">
+                            <li>Python</li>
+                            <li>Dart</li>
+                            <li>JavaScript</li>
+                            <li>SQL</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Frameworks & Libraries:</h3>
+                        <ul class="list-disc list-inside ml-4">
+                            <li>Flutter</li>
+                            <li>TensorFlow</li>
+                            <li>PyTorch</li>
+                            <li>Hugging Face</li>
+                            <li>pandas</li>
+                            <li>NumPy</li>
+                            <li>Scikit-learn</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">AI/ML Models & Concepts:</h3>
+                        <ul class="list-disc list-inside ml-4">
+                            <li>Generative AI</li>
+                            <li>Large Language Models (LLMs)</li>
+                            <li>Multimodal LLMs</li>
+                            <li>Vision-Language Models (VLMs)</li>
+                            <li>Agentic AI</li>
+                            <li>Multi-Agent Systems</li>
+                            <li>RAG (Retrieval Augmented Generation)</li>
+                            <li>Model Training & Fine-tuning</li>
+                            <li>Deep Learning</li>
+                            <li>Machine Learning</li>
+                            <li>Computer Vision</li>
+                            <li>NLP</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Cloud Technologies:</h3>
+                        <ul class="list-disc list-inside ml-4">
+                            <li>Google Cloud</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Database Systems:</h3>
+                        <ul class="list-disc list-inside ml-4">
+                            <li>Firebase</li>
+                            <li>ObjectBox</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Web Technologies & Tools:</h3>
+                        <ul class="list-disc list-inside ml-4">
+                            <li>WordPress</li>
+                            <li>Figma</li>
+                            <li>Adobe XD</li>
+                            <li>BS4 (Beautiful Soup 4)</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">DevOps & Version Control:</h3>
+                        <ul class="list-disc list-inside ml-4">
+                            <li>Git</li>
+                            <li>GitHub</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Marketing Tools:</h3>
+                        <ul class="list-disc list-inside ml-4">
+                            <li>Meta Ads</li>
+                            <li>Google Ads</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Research Skills:</h3>
+                        <ul class="list-disc list-inside ml-4">
+                            <li>Literature Review</li>
+                            <li>Data Preprocessing</li>
+                            <li>Model Evaluation</li>
+                            <li>System Design</li>
+                            <li>Technical Writing</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Leadership and Activities Section -->
+            <section id="leadership" class="card">
+                <h2 class="text-3xl font-bold section-title">Leadership & Activities</h2>
+                <div class="text-gray-700 space-y-4">
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900">Founder <span class="text-gray-600 text-base font-normal">| AQSA BAJWA (Startup), Islamabad, Pakistan</span></h3>
+                        <p class="text-gray-600 text-sm mb-1">Sept 2024</p>
+                        <ul class="list-disc list-inside ml-6">
+                            <li>Launched Aqsa Bajwa Designer Clothing Brand, achieving 1 million sales in the first month.</li>
+                            <li>Designed exclusive collections and executed marketing campaigns, establishing a strong market presence.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900">Founder <span class="text-gray-600 text-base font-normal">| INSHORT TECH (Startup), Islamabad, Pakistan</span></h3>
+                        <p class="text-gray-600 text-sm mb-1">Jan 2022</p>
+                        <ul class="list-disc list-inside ml-6">
+                            <li>Launched an edutech startup, developing apps like Coursely, Scholarly, and InShort Quiz.</li>
+                            <li>Provided mobile development services, delivering tailored solutions for clients.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900">Founder <span class="text-gray-600 text-base font-normal">| BARCURS (Startup), Islamabad, Pakistan</span></h3>
+                        <p class="text-gray-600 text-sm mb-1">Apr 2021</p>
+                        <ul class="list-disc list-inside ml-6">
+                            <li>Launched Barcurs, a premium sunglasses brand targeting US and European markets.</li>
+                            <li>Executed marketing strategies to drive brand awareness and sales.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900">Winner - ICE FARE COMPETITION 2019 <span class="text-gray-600 text-base font-normal">| Multan, Punjab, Pakistan</span></h3>
+                        <p class="text-gray-600 text-sm mb-1">May 2019</p>
+                        <ul class="list-disc list-inside ml-6">
+                            <li>Won 2019 competition by developing Deev, a unique ride-sharing app built using Flutter.</li>
+                            <li>Designed and implemented the app’s UI/UX.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Publications Section -->
+            <section id="publications" class="card">
+                <h2 class="text-3xl font-bold section-title">Publications</h2>
+                <div class="text-gray-700">
+                    <p class="mb-2">
+                        <strong class="text-blue-800">MCQs Generation with Large Language Models: A Survey of Methodologies, Evolution, and Open Research Issues</strong> (Manuscript submitted for publication)
+                    </p>
+                    <ul class="list-disc list-inside ml-6">
+                        <li>Analyzed methodologies, identified trends, and highlighted open research issues in AI-driven educational tools.</li>
+                    </ul>
+                    <p class="mt-4 mb-2">
+                        <strong class="text-blue-800">Currently writing an MCQs generation system using a mixture-of-agents approach for enhanced accuracy.</strong>
+                    </p>
+                </div>
+            </section>
+
+            <!-- Research Projects Section -->
+            <section id="research-projects" class="card">
+                <h2 class="text-3xl font-bold section-title">Research Projects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                    <div class="project-card">
+                        <div>
+                            <h3 class="text-xl">MCQs Generation System (Thesis Project)</h3>
+                            <p class="text-gray-700">Developing an MCQs generation system using a mixture-of-agents approach for enhanced accuracy and relevance.</p>
+                        </div>
+                        <p class="tools"><strong>Tools:</strong> Mixture-of-Agents, Large Language Models</p>
+                        <a href="https://github.com/raheelism" target="_blank" class="mt-4 inline-block btn-primary text-center">
+                            View Project <i class="fab fa-github ml-2"></i>
+                        </a>
+                    </div>
+
+                    <div class="project-card">
+                        <div>
+                            <h3 class="text-xl">LeadGen Agent</h3>
+                            <p class="text-gray-700">Automatically discovers and qualifies potential leads from Quora using Firecrawl, Phidata, Composio, and OpenAI GPT-4o.</p>
+                        </div>
+                        <p class="tools"><strong>Tools:</strong> Firecrawl, Phidata, Composio, OpenAI GPT-4o</p>
+                        <a href="https://github.com/raheelism/LeadGen-Agent" target="_blank" class="mt-4 inline-block btn-primary text-center">
+                            View Project <i class="fab fa-github ml-2"></i>
+                        </a>
+                    </div>
+
+                    <div class="project-card">
+                        <div>
+                            <h3 class="text-xl">MaxKB</h3>
+                            <p class="text-gray-700">Knowledge base question-answering system based on LLM.</p>
+                        </div>
+                        <p class="tools"><strong>Tools:</strong> LLM</p>
+                        <a href="https://github.com/raheelism/MaxKB" target="_blank" class="mt-4 inline-block btn-primary text-center">
+                            View Project <i class="fab fa-github ml-2"></i>
+                        </a>
+                    </div>
+
+                    <div class="project-card">
+                        <div>
+                            <h3 class="text-xl">LivePortrait</h3>
+                            <p class="text-gray-700">Efficient Portrait Animation with Stitching and Retargeting Control.</p>
+                        </div>
+                        <p class="tools"><strong>Tools:</strong> Computer Vision, Deep Learning</p>
+                        <a href="https://github.com/raheelism/LivePortrait" target="_blank" class="mt-4 inline-block btn-primary text-center">
+                            View Project <i class="fab fa-github ml-2"></i>
+                        </a>
+                    </div>
+
+                    <div class="project-card">
+                        <div>
+                            <h3 class="text-xl">QA using Albert & Electra</h3>
+                            <p class="text-gray-700">Implements a pipeline to answer questions using Wikipedia text.</p>
+                        </div>
+                        <p class="tools"><strong>Tools:</strong> Albert, Electra, Transformers</p>
+                        <a href="https://github.com/raheelism/QA-using-Albert-Electra" target="_blank" class="mt-4 inline-block btn-primary text-center">
+                            View Project <i class="fab fa-github ml-2"></i>
+                        </a>
+                    </div>
+
+                    <div class="project-card">
+                        <div>
+                            <h3 class="text-xl">MCQs Using T5 & T2T</h3>
+                            <p class="text-gray-700">Question Generation using Transformers, text2text and Sense2Vec with correct answers and distractors.</p>
+                        </div>
+                        <p class="tools"><strong>Tools:</strong> T5, T2T, Transformers, text2text, Sense2Vec</p>
+                        <a href="https://github.com/raheelism/MCQs-Using-T5-T2T" target="_blank" class="mt-4 inline-block btn-primary text-center">
+                            View Project <i class="fab fa-github ml-2"></i>
+                        </a>
+                    </div>
+
+                    <div class="project-card">
+                        <div>
+                            <h3 class="text-xl">BlogLM</h3>
+                            <p class="text-gray-700">A RAG based blog post generator leveraging Gemini 1.5 Flash, Google Search, and BS4.</p>
+                        </div>
+                        <p class="tools"><strong>Tools:</strong> Gemini 1.5 Flash, Google Search, BS4, RAG</p>
+                        <a href="https://github.com/raheelism/BlogLM" target="_blank" class="mt-4 inline-block btn-primary text-center">
+                            View Project <i class="fab fa-github ml-2"></i>
+                        </a>
+                    </div>
+
+                    <div class="project-card">
+                        <div>
+                            <h3 class="text-xl">AbsLLM</h3>
+                            <p class="text-gray-700">Using fine-tuned Gemini 1.5 Flash which summarizes academic articles into an abstract paragraph.</p>
+                        </div>
+                        <p class="tools"><strong>Tools:</strong> Fine-tuned Gemini 1.5 Flash</p>
+                        <a href="https://github.com/raheelism/AbsLLM" target="_blank" class="mt-4 inline-block btn-primary text-center">
+                            View Project <i class="fab fa-github ml-2"></i>
+                        </a>
+                    </div>
+
+                    <div class="project-card">
+                        <div>
+                            <h3 class="text-xl">SumPaper</h3>
+                            <p class="text-gray-700">Using multiple LLMs to generate a summary of the provided paper.</p>
+                        </div>
+                        <p class="tools"><strong>Tools:</strong> Multiple LLMs</p>
+                        <a href="https://github.com/raheelism/SumPaper" target="_blank" class="mt-4 inline-block btn-primary text-center">
+                            View Project <i class="fab fa-github ml-2"></i>
+                        </a>
+                    </div>
+
+                    <div class="project-card">
+                        <div>
+                            <h3 class="text-xl">SynData Generator</h3>
+                            <p class="text-gray-700">Synthetic data generation using LLaMA and fine-tuned Qwen.</p>
+                        </div>
+                        <p class="tools"><strong>Tools:</strong> LLaMA, Fine-tuned Qwen</p>
+                        <a href="https://github.com/raheelism/SynData-Generator" target="_blank" class="mt-4 inline-block btn-primary text-center">
+                            View Project <i class="fab fa-github ml-2"></i>
+                        </a>
+                    </div>
+
+                    <div class="project-card">
+                        <div>
+                            <h3 class="text-xl">QABox</h3>
+                            <p class="text-gray-700">QA RAG system built with ObjectBox.</p>
+                        </div>
+                        <p class="tools"><strong>Tools:</strong> ObjectBox, RAG</p>
+                        <a href="https://github.com/raheelism/QABox" target="_blank" class="mt-4 inline-block btn-primary text-center">
+                            View Project <i class="fab fa-github ml-2"></i>
+                        </a>
+                    </div>
+
+                    <div class="project-card">
+                        <div>
+                            <h3 class="text-xl">MusicAI</h3>
+                            <p class="text-gray-700">Music generation using Meta’s MusicGen.</p>
+                        </div>
+                        <p class="tools"><strong>Tools:</strong> Meta’s MusicGen</p>
+                        <a href="https://github.com/raheelism/MusicAI" target="_blank" class="mt-4 inline-block btn-primary text-center">
+                            View Project <i class="fab fa-github ml-2"></i>
+                        </a>
+                    </div>
+
+                    <div class="project-card">
+                        <div>
+                            <h3 class="text-xl">ImageAAC</h3>
+                            <p class="text-gray-700">AAC image generation using LLaMA vision model.</p>
+                        </div>
+                        <p class="tools"><strong>Tools:</strong> LLaMA Vision Model</p>
+                        <a href="https://github.com/raheelism/ImageAAC" target="_blank" class="mt-4 inline-block btn-primary text-center">
+                            View Project <i class="fab fa-github ml-2"></i>
+                        </a>
+                    </div>
+
+                    <div class="project-card">
+                        <div>
+                            <h3 class="text-xl">MedicalRAG</h3>
+                            <p class="text-gray-700">Medical prescription decoding with RAG.</p>
+                        </div>
+                        <p class="tools"><strong>Tools:</strong> RAG</p>
+                        <a href="https://github.com/raheelism/MedicalRAG" target="_blank" class="mt-4 inline-block btn-primary text-center">
+                            View Project <i class="fab fa-github ml-2"></i>
+                        </a>
+                    </div>
+
+                    <div class="project-card">
+                        <div>
+                            <h3 class="text-xl">InstaPost</h3>
+                            <p class="text-gray-700">Instagram post generation using Gemini.</p>
+                        </div>
+                        <p class="tools"><strong>Tools:</strong> Gemini</p>
+                        <a href="https://github.com/raheelism/InstaPost" target="_blank" class="mt-4 inline-block btn-primary text-center">
+                            View Project <i class="fab fa-github ml-2"></i>
+                        </a>
+                    </div>
+
+                    <div class="project-card">
+                        <div>
+                            <h3 class="text-xl">IslamQA</h3>
+                            <p class="text-gray-700">Islamic Q\&A system using RAG and Gemini.</p>
+                        </div>
+                        <p class="tools"><strong>Tools:</strong> RAG, Gemini</p>
+                        <a href="https://github.com/raheelism/IslamQA" target="_blank" class="mt-4 inline-block btn-primary text-center">
+                            View Project <i class="fab fa-github ml-2"></i>
+                        </a>
+                    </div>
+
+                    <div class="project-card">
+                        <div>
+                            <h3 class="text-xl">ThesisTitle</h3>
+                            <p class="text-gray-700">Thesis title generation from summary ideas.</p>
+                        </div>
+                        <p class="tools"><strong>Tools:</strong> LLMs</p>
+                        <a href="https://github.com/raheelism/ThesisTitle" target="_blank" class="mt-4 inline-block btn-primary text-center">
+                            View Project <i class="fab fa-github ml-2"></i>
+                        </a>
+                    </div>
+
+                    <div class="project-card">
+                        <div>
+                            <h3 class="text-xl">AACIcons</h3>
+                            <p class="text-gray-700">AAC icon generation using LLaMA vision.</p>
+                        </div>
+                        <p class="tools"><strong>Tools:</strong> LLaMA Vision</p>
+                        <a href="https://github.com/raheelism/AACIcons" target="_blank" class="mt-4 inline-block btn-primary text-center">
+                            View Project <i class="fab fa-github ml-2"></i>
+                        </a>
+                    </div>
+
+                    <div class="project-card">
+                        <div>
+                            <h3 class="text-xl">NextPhrase</h3>
+                            <p class="text-gray-700">Next-phrase prediction using GPT-4.</p>
+                        </div>
+                        <p class="tools"><strong>Tools:</strong> GPT-4</p>
+                        <a href="https://github.com/raheelism/NextPhrase" target="_blank" class="mt-4 inline-block btn-primary text-center">
+                            View Project <i class="fab fa-github ml-2"></i>
+                        </a>
+                    </div>
+
+                    <div class="project-card">
+                        <div>
+                            <h3 class="text-xl">ProductDescrip</h3>
+                            <p class="text-gray-700">Product description generation with DeepSeek R1.</p>
+                        </div>
+                        <p class="tools"><strong>Tools:</strong> DeepSeek R1</p>
+                        <a href="https://github.com/raheelism/ProductDescrip" target="_blank" class="mt-4 inline-block btn-primary text-center">
+                            View Project <i class="fab fa-github ml-2"></i>
+                        </a>
+                    </div>
+
+                    <div class="project-card">
+                        <div>
+                            <h3 class="text-xl">FakePost</h3>
+                            <p class="text-gray-700">Fake post detection using multiple LLMs.</p>
+                        </div>
+                        <p class="tools"><strong>Tools:</strong> Multiple LLMs</p>
+                        <a href="https://github.com/raheelism/FakePost" target="_blank" class="mt-4 inline-block btn-primary text-center">
+                            View Project <i class="fab fa-github ml-2"></i>
+                        </a>
+                    </div>
+
+                    <div class="project-card">
+                        <div>
+                            <h3 class="text-xl">AQDress</h3>
+                            <p class="text-gray-700">Dress image generation with Stable Diffusion.</p>
+                        </div>
+                        <p class="tools"><strong>Tools:</strong> Stable Diffusion</p>
+                        <a href="https://github.com/raheelism/AQDress" target="_blank" class="mt-4 inline-block btn-primary text-center">
+                            View Project <i class="fab fa-github ml-2"></i>
+                        </a>
+                    </div>
+
+                    <div class="project-card">
+                        <div>
+                            <h3 class="text-xl">PromptOpt</h3>
+                            <p class="text-gray-700">Prompt optimization using Gemini 1.5 Flash.</p>
+                        </div>
+                        <p class="tools"><strong>Tools:</strong> Gemini 1.5 Flash</p>
+                        <a href="https://github.com/raheelism/PromptOpt" target="_blank" class="mt-4 inline-block btn-primary text-center">
+                            View Project <i class="fab fa-github ml-2"></i>
+                        </a>
+                    </div>
+
+                </div>
+                <div class="text-center mt-10">
+                    <a href="https://github.com/raheelism?tab=repositories" target="_blank" class="btn-secondary inline-flex items-center">
+                        View All Research Projects <i class="fas fa-external-link-alt ml-2"></i>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Other Projects Section -->
+            <section id="other-projects" class="card">
+                <h2 class="text-3xl font-bold section-title">Other Projects (Mobile/Web Development)</h2>
+                <div class="text-gray-700 space-y-4">
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900">Flutter Applications: Diverse mobile applications developed across various domains.</h3>
+                        <p class="text-gray-600 text-sm mb-1"><strong>Tools:</strong> Flutter, Firebase, WordPress, Drift SQL, Google Maps</p>
+                        <ul class="list-disc list-inside ml-6">
+                            <li>Developed a wide range of Flutter applications including finance managers (Cashew), ride-sharing (GoRide), news apps, e-commerce platforms, LMS, food delivery, and communication clones (WhatsApp).</li>
+                            <li>Focused on responsive UI/UX design, third-party API integration, and robust backend connectivity.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900">AI-Based Apps (General): Applications leveraging AI for various functionalities.</h3>
+                        <p class="text-gray-600 text-sm mb-1"><strong>Tools:</strong> AI/ML Frameworks (General)</p>
+                        <ul class="list-disc list-inside ml-6">
+                            <li>Built AI-powered tools such as AI Summarizer, Rewrite, AIBlog, Img2Text, and ExtractIt.</li>
+                            <li>Applied machine learning and natural language processing techniques to automate content creation, text transformation, and data extraction.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900">Developed: Plex PDP Care, Umavoice, Spectra Scientific, Chatter, Snapit, Inshort Quiz, Cosmos RedShift, Scholarly, Coursely, and Comply E-Forms using Flutter.</h3>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Certifications Section -->
+            <section id="certifications" class="card">
+                <h2 class="text-3xl font-bold section-title">Certifications</h2>
+                <div class="text-gray-700">
+                    <p class="mb-2">
+                        <strong class="text-gray-900">20+ Professional Certifications</strong> from platforms like Coursera, Udemy, and Udacity, covering:
+                    </p>
+                    <ul class="list-disc list-inside ml-6">
+                        <li>Generative AI</li>
+                        <li>Flutter Development</li>
+                        <li>Machine Learning & Deep Learning</li>
+                        <li>UI/UX Design</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- References Section -->
+            <section id="references" class="card">
+                <h2 class="text-3xl font-bold section-title">References</h2>
+                <div class="text-gray-700 space-y-4">
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900">Dr. Shah Khalid</h3>
+                        <p class="text-gray-700">Assistant Professor, Department of Computing (DoC)</p>
+                        <p class="text-gray-700">School of Electrical Engineering and Computer Science (SEECS)</p>
+                        <p class="text-gray-700">National University of Sciences and Technology (NUST)</p>
+                        <p class="text-gray-700">Islamabad, Pakistan</p>
+                        <a href="mailto:shah.khalid@seecs.edu.pk" class="text-blue-600 hover:underline flex items-center mt-1">
+                            <i class="fas fa-envelope link-icon"></i> shah.khalid@seecs.edu.pk
+                        </a>
+                        <p class="text-gray-600 text-sm mt-1">Relationship: Thesis Advisor</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900">Hafiz Syed Muhammad Bilal</h3>
+                        <p class="text-gray-700">Assistant Professor, Department of Computing (DoC)</p>
+                        <p class="text-gray-700">School of Electrical Engineering and Computer Science (SEECS)</p>
+                        <p class="text-gray-700">National University of Sciences and Technology (NUST)</p>
+                        <p class="text-gray-700">Islamabad, Pakistan</p>
+                        <a href="mailto:bilal.ali@seecs.edu.pk" class="text-blue-600 hover:underline flex items-center mt-1">
+                            <i class="fas fa-envelope link-icon"></i> bilal.ali@seecs.edu.pk
+                        </a>
+                        <p class="text-gray-600 text-sm mt-1">Relationship: Academic Supervisor/Professor</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="text-center text-gray-600 text-sm mt-10 p-4 border-t border-gray-200">
+                <p>&copy; 2025 Muhammad Raheel Anwar. All rights reserved.</p>
+                <p>Designed for academic and research focus.</p>
+            </footer>
+
+        </main>
+    </div>
+</body>
+</html>
