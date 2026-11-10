@@ -400,7 +400,7 @@
 /* Mobile & CodeCanyon Apps Grid */
 .apps-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: var(--space-lg);
 }
 
@@ -770,19 +770,19 @@
             <div id="panel-vlm" role="tabpanel" aria-labelledby="tab-vlm" hidden data-keep>
               <div class="compartments">
                 <div class="compartment compartment--thu">
-                  <span class="mono-code">App 01 / Juntendo Medical</span>
-                  <span class="compartment__title">VLM triage &amp; patient chat</span>
-                  <span class="mono-code">Flutter + FastAPI</span>
-                </div>
-                <div class="compartment compartment--wed">
-                  <span class="mono-code">App 02 / LeafGuard AI</span>
+                  <span class="mono-code">App 01 / PlantDoctor AI</span>
                   <span class="compartment__title">FastVLM leaf localization</span>
                   <span class="mono-code">+28% vs CNN baseline</span>
                 </div>
+                <div class="compartment compartment--wed">
+                  <span class="mono-code">App 02 / MindPrep &amp; Quizify</span>
+                  <span class="compartment__title">Multi-agent MCQ &amp; OCR</span>
+                  <span class="mono-code">Flutter + FastAPI</span>
+                </div>
                 <div class="compartment compartment--fri">
-                  <span class="mono-code">App 03 / SpeakFlow AAC</span>
-                  <span class="compartment__title">Predictive phrase &amp; voice</span>
-                  <span class="mono-code">-24% keystrokes</span>
+                  <span class="mono-code">App 03 / Tooly &amp; Chatia AI</span>
+                  <span class="compartment__title">Voice &amp; PDF RAG assistant</span>
+                  <span class="mono-code">GPT-4o + Gemini + VAPI</span>
                 </div>
               </div>
             </div>
@@ -794,7 +794,7 @@
               </div>
               <div class="Rx-label__meta">
                 <span class="stamp-verified">Verified CV1.pdf / 2026</span>
-                <span class="mono-code">6 publications / 8 featured apps</span>
+                <span class="mono-code">6 publications / 30 shipped apps</span>
               </div>
             </div>
           </div>
@@ -909,13 +909,14 @@
         <div class="head-split head-split--controls">
           <div>
             <h2>Shipped mobile apps and kits.</h2>
-            <p class="lead">Production Flutter and Android applications across Google Play and CodeCanyon, combining on-device AI, voice synthesis, and adaptive UI engines.</p>
+            <p class="lead">Production Flutter and Android applications across Google Play, CodeCanyon, and private internal enterprise deployments.</p>
           </div>
           <div class="seg" role="tablist" aria-label="Filter mobile apps by marketplace">
-            <button type="button" role="tab" aria-selected="true" data-app-filter="all">All releases (8)</button>
-            <button type="button" role="tab" aria-selected="false" data-app-filter="gplay" tabindex="-1">Google Play (4)</button>
-            <button type="button" role="tab" aria-selected="false" data-app-filter="codecanyon" tabindex="-1">CodeCanyon (4)</button>
-            <button type="button" role="tab" aria-selected="false" data-app-filter="ai" tabindex="-1">AI-powered (6)</button>
+            <button type="button" role="tab" aria-selected="true" data-app-filter="all">All releases (30)</button>
+            <button type="button" role="tab" aria-selected="false" data-app-filter="gplay" tabindex="-1">Google Play (11)</button>
+            <button type="button" role="tab" aria-selected="false" data-app-filter="codecanyon" tabindex="-1">CodeCanyon (10)</button>
+            <button type="button" role="tab" aria-selected="false" data-app-filter="internal" tabindex="-1">Internal enterprise (9)</button>
+            <button type="button" role="tab" aria-selected="false" data-app-filter="ai" tabindex="-1">AI-powered (26)</button>
           </div>
         </div>
 
@@ -926,15 +927,15 @@
                 <span class="badge-store">Google Play</span>
                 <span class="badge-ai">FastVLM Vision</span>
               </div>
-              <h3>LeafGuard AI: Crop Scanner</h3>
-              <p>Mobile field diagnostic scanner using FastVLM leaf localization to detect crop diseases and generate treatment steps with 28% higher accuracy than CNN baselines.</p>
+              <h3>PlantDoctor: Leaf Disease AI</h3>
+              <p>On-device and cloud VLM crop diagnostic scanner that localizes foliar lesions, identifies plant diseases, and generates treatment plans (+28% over CNN baselines).</p>
             </div>
             <div class="app-card__foot">
               <div class="app-card__screen compartment--thu">
-                <span class="mono-code">Model: FastVLM +BLIP-2</span>
-                <span class="mono-code">Stack: Flutter, PyTorch, FastAPI</span>
+                <span class="mono-code">ID: ai.saifullah.plantdoctor</span>
+                <span class="mono-code">Stack: Flutter, FastVLM, PyTorch</span>
               </div>
-              <a class="text-link" href="https://play.google.com/store/search?q=plant+disease+ai+diagnosis&amp;c=apps" target="_blank" rel="noopener noreferrer">View on Google Play</a>
+              <a class="text-link" href="https://play.google.com/store/apps/details?id=ai.saifullah.plantdoctor" target="_blank" rel="noopener noreferrer">Open on Google Play</a>
             </div>
           </article>
 
@@ -942,17 +943,35 @@
             <div class="app-card__head">
               <div class="app-badges">
                 <span class="badge-store">Google Play</span>
-                <span class="badge-ai">VLM + Clinical LLM</span>
+                <span class="badge-ai">Crop Vision AI</span>
               </div>
-              <h3>Juntendo MedAssist</h3>
-              <p>Full-stack medical triage and patient consultation mobile app built for Juntendo University Medical System, pairing VLM radiology screening with guided LLM intake.</p>
+              <h3>AI Plant Disease Detection</h3>
+              <p>Field agronomy diagnostic application using vision-language embeddings and leaf symptom classification to detect fungal blight and nutrient deficiencies.</p>
             </div>
             <div class="app-card__foot">
               <div class="app-card__screen compartment--wed">
-                <span class="mono-code">Mode: Multimodal Triage</span>
-                <span class="mono-code">Stack: Flutter, GPT-4V, FastAPI</span>
+                <span class="mono-code">ID: com.ai.plant.disease.detection.app</span>
+                <span class="mono-code">Stack: Flutter, OpenCV, BLIP-2</span>
               </div>
-              <a class="text-link" href="https://play.google.com/store/search?q=medical+ai+symptom+triage&amp;c=apps" target="_blank" rel="noopener noreferrer">View on Google Play</a>
+              <a class="text-link" href="https://play.google.com/store/apps/details?id=com.ai.plant.disease.detection.app" target="_blank" rel="noopener noreferrer">Open on Google Play</a>
+            </div>
+          </article>
+
+          <article class="app-card" data-market="gplay" data-ai="true">
+            <div class="app-card__head">
+              <div class="app-badges">
+                <span class="badge-store">Google Play</span>
+                <span class="badge-ai">Clinical Urdu AAC</span>
+              </div>
+              <h3>Kya Baat: Medical Urdu AAC</h3>
+              <p>Bedside assistive communication and clinical triage app for non-verbal and post-stroke patients, featuring Urdu voice synthesis and instant caregiver alerts.</p>
+            </div>
+            <div class="app-card__foot">
+              <div class="app-card__screen compartment--fri">
+                <span class="mono-code">ID: com.ahmadjamal.apps.medical.kyabaat</span>
+                <span class="mono-code">Stack: Flutter, Urdu TTS, SQLite</span>
+              </div>
+              <a class="text-link" href="https://play.google.com/store/apps/details?id=com.ahmadjamal.apps.medical.kyabaat" target="_blank" rel="noopener noreferrer">Open on Google Play</a>
             </div>
           </article>
 
@@ -962,15 +981,69 @@
                 <span class="badge-store">Google Play</span>
                 <span class="badge-ai">Predictive NLP + TTS</span>
               </div>
-              <h3>SpeakFlow AAC Companion</h3>
-              <p>Assistive speech communication app featuring next-phrase LLM prediction that cuts keystrokes by 24%, generative board icons, and low-latency Urdu and English TTS.</p>
+              <h3>VoxiTap: AAC Speech Assistant</h3>
+              <p>Augmentative communication voice pad with predictive next-phrase completion that cuts keystrokes by 24%, custom board icons, and low-latency speech synthesis.</p>
             </div>
             <div class="app-card__foot">
-              <div class="app-card__screen compartment--fri">
-                <span class="mono-code">Latency: On-device cache</span>
+              <div class="app-card__screen compartment--mon">
+                <span class="mono-code">ID: com.lsnstudios.voxitap</span>
                 <span class="mono-code">Stack: Flutter, LangChain, VITS</span>
               </div>
-              <a class="text-link" href="https://play.google.com/store/search?q=aac+speech+ai+assistant&amp;c=apps" target="_blank" rel="noopener noreferrer">View on Google Play</a>
+              <a class="text-link" href="https://play.google.com/store/apps/details?id=com.lsnstudios.voxitap" target="_blank" rel="noopener noreferrer">Open on Google Play</a>
+            </div>
+          </article>
+
+          <article class="app-card" data-market="gplay" data-ai="true">
+            <div class="app-card__head">
+              <div class="app-badges">
+                <span class="badge-store">Google Play</span>
+                <span class="badge-ai">Multi-Agent MCQ</span>
+              </div>
+              <h3>MindPrep: AI Study &amp; Exam Prep</h3>
+              <p>Mobile study assistant combining textbook OCR scanning with collaborative LLM question synthesis, distractor calibration, and personalized revision schedules.</p>
+            </div>
+            <div class="app-card__foot">
+              <div class="app-card__screen compartment--thu">
+                <span class="mono-code">ID: com.mindprep.ai</span>
+                <span class="mono-code">Stack: Flutter, LangChain, FastAPI</span>
+              </div>
+              <a class="text-link" href="https://play.google.com/store/apps/details?id=com.mindprep.ai" target="_blank" rel="noopener noreferrer">Open on Google Play</a>
+            </div>
+          </article>
+
+          <article class="app-card" data-market="gplay" data-ai="true">
+            <div class="app-card__head">
+              <div class="app-badges">
+                <span class="badge-store">Google Play</span>
+                <span class="badge-ai">Vision OCR + Quiz</span>
+              </div>
+              <h3>Scan2Quiz: Snap &amp; Revise AI</h3>
+              <p>Vision-language mobile scanner that extracts diagrams and dense notes from camera captures to synthesize interactive practice tests and explanations.</p>
+            </div>
+            <div class="app-card__foot">
+              <div class="app-card__screen compartment--wed">
+                <span class="mono-code">ID: com.scan2quiz.app</span>
+                <span class="mono-code">Stack: Flutter, Vision LLM, OCR</span>
+              </div>
+              <a class="text-link" href="https://play.google.com/store/apps/details?id=com.scan2quiz.app" target="_blank" rel="noopener noreferrer">Open on Google Play</a>
+            </div>
+          </article>
+
+          <article class="app-card" data-market="gplay" data-ai="true">
+            <div class="app-card__head">
+              <div class="app-badges">
+                <span class="badge-store">Google Play</span>
+                <span class="badge-ai">OCR Flashcards &amp; Tests</span>
+              </div>
+              <h3>QuickRev: Textbook OCR Quiz</h3>
+              <p>Instant camera-to-quiz revision tool that parses printed lecture pages into bloom-taxonomy MCQs, active-recall flashcards, and topic mastery scores.</p>
+            </div>
+            <div class="app-card__foot">
+              <div class="app-card__screen compartment--tue">
+                <span class="mono-code">ID: com.tt.quickrev</span>
+                <span class="mono-code">Stack: Flutter, FastAPI, VectorDB</span>
+              </div>
+              <a class="text-link" href="https://play.google.com/store/apps/details?id=com.tt.quickrev" target="_blank" rel="noopener noreferrer">Open on Google Play</a>
             </div>
           </article>
 
@@ -980,33 +1053,69 @@
                 <span class="badge-store">Google Play</span>
                 <span class="badge-ai">Llama OCR + NER</span>
               </div>
-              <h3>DocuLens CV &amp; Receipt AI</h3>
-              <p>Camera-to-JSON mobile parser combining OCR, spaCy entity recognition, and Llama extraction to convert paper resumes and invoices into structured records.</p>
+              <h3>AI Resume Reviewer &amp; ATS Check</h3>
+              <p>Document parser and ATS evaluator combining PDF OCR, spaCy entity extraction, and Llama scoring pipelines to benchmark resumes against role requirements.</p>
             </div>
             <div class="app-card__foot">
-              <div class="app-card__screen compartment--mon">
-                <span class="mono-code">Pipeline: OCR to JSON API</span>
-                <span class="mono-code">Stack: Flutter, spaCy, Llama 3</span>
+              <div class="app-card__screen compartment--sat">
+                <span class="mono-code">ID: io.ms.resume.reviewer</span>
+                <span class="mono-code">Stack: Flutter, spaCy NER, Llama</span>
               </div>
-              <a class="text-link" href="https://play.google.com/store/search?q=ai+resume+ocr+scanner&amp;c=apps" target="_blank" rel="noopener noreferrer">View on Google Play</a>
+              <a class="text-link" href="https://play.google.com/store/apps/details?id=io.ms.resume.reviewer" target="_blank" rel="noopener noreferrer">Open on Google Play</a>
             </div>
           </article>
 
-          <article class="app-card" data-market="codecanyon" data-ai="true">
+          <article class="app-card" data-market="gplay" data-ai="true">
             <div class="app-card__head">
               <div class="app-badges">
-                <span class="badge-store">CodeCanyon</span>
-                <span class="badge-ai">Mixture-of-Agents</span>
+                <span class="badge-store">Google Play</span>
+                <span class="badge-ai">Clinical Urdu NLP</span>
               </div>
-              <h3>Quizify AI: Exam &amp; MCQ Kit</h3>
-              <p>Full Flutter app and admin panel kit powered by collaborative multi-agent LLM workflows to generate syllabus MCQs, score distractors, and host live 1v1 quizzes.</p>
+              <h3>Clinical Assistant Urdu: Ward Guide</h3>
+              <p>Bilingual Urdu and English clinical triage reference and lab diagnostic companion designed for emergency medical technicians, nursing staff, and ward trainees.</p>
             </div>
             <div class="app-card__foot">
               <div class="app-card__screen compartment--thu">
-                <span class="mono-code">Engine: MCQsAgent MoA</span>
-                <span class="mono-code">Stack: Flutter 3.x, FastAPI, SQL</span>
+                <span class="mono-code">ID: com.educationalappspk.clinicalassistanturdu</span>
+                <span class="mono-code">Stack: Flutter, Urdu NLP, SQLite</span>
               </div>
-              <a class="text-link" href="https://codecanyon.net/search/flutter%20ai%20quiz" target="_blank" rel="noopener noreferrer">View on CodeCanyon</a>
+              <a class="text-link" href="https://play.google.com/store/apps/details?id=com.educationalappspk.clinicalassistanturdu" target="_blank" rel="noopener noreferrer">Open on Google Play</a>
+            </div>
+          </article>
+
+          <article class="app-card" data-market="gplay" data-ai="true">
+            <div class="app-card__head">
+              <div class="app-badges">
+                <span class="badge-store">Google Play</span>
+                <span class="badge-ai">Adaptive AI Tutor</span>
+              </div>
+              <h3>AI Learning &amp; Exam Companion</h3>
+              <p>Personalized mobile tutor using LLM concept decomposition and dynamic quiz generation to adapt practice sessions to student error patterns.</p>
+            </div>
+            <div class="app-card__foot">
+              <div class="app-card__screen compartment--wed">
+                <span class="mono-code">ID: com.karan147.ailearningapp</span>
+                <span class="mono-code">Stack: Flutter, OpenAI API, Firebase</span>
+              </div>
+              <a class="text-link" href="https://play.google.com/store/apps/details?id=com.karan147.ailearningapp" target="_blank" rel="noopener noreferrer">Open on Google Play</a>
+            </div>
+          </article>
+
+          <article class="app-card" data-market="gplay" data-ai="true">
+            <div class="app-card__head">
+              <div class="app-badges">
+                <span class="badge-store">Google Play</span>
+                <span class="badge-ai">Resume NER + Scoring</span>
+              </div>
+              <h3>ATS Resume Pro: CV Score &amp; Parser</h3>
+              <p>Structured CV analyzer that parses multi-column PDFs, maps candidate skills against job descriptions, and outputs weighted ATS match diagnostics.</p>
+            </div>
+            <div class="app-card__foot">
+              <div class="app-card__screen compartment--fri">
+                <span class="mono-code">ID: com.canificlabs.atsresumepro</span>
+                <span class="mono-code">Stack: Flutter, Python NER, Flask</span>
+              </div>
+              <a class="text-link" href="https://play.google.com/store/apps/details?id=com.canificlabs.atsresumepro" target="_blank" rel="noopener noreferrer">Open on Google Play</a>
             </div>
           </article>
 
@@ -1014,17 +1123,71 @@
             <div class="app-card__head">
               <div class="app-badges">
                 <span class="badge-store">CodeCanyon</span>
-                <span class="badge-ai">Voice + Local RAG</span>
+                <span class="badge-ai">Multi-LLM + Voice</span>
               </div>
-              <h3>Chatia Voice &amp; RAG Studio</h3>
-              <p>Clean-architecture Flutter template with real-time VAPI and ElevenLabs voice rooms, PDF knowledge base RAG indexing, and switchable OpenAI and Azure backends.</p>
+              <h3>Flutter Chatbot AI &amp; Voice Kit</h3>
+              <p>Production Flutter AI assistant integrating GPT-4o and Gemini 1.5 with real-time voice conversation rooms, prompt memory, and diffusion image generation.</p>
+            </div>
+            <div class="app-card__foot">
+              <div class="app-card__screen compartment--thu">
+                <span class="mono-code">Item: #52533789</span>
+                <span class="mono-code">Stack: Flutter, GPT-4o, Gemini, TTS</span>
+              </div>
+              <a class="text-link" href="https://codecanyon.net/item/flutter-chatbot-ai-powered-by-chatgpt-gpt4o-gemini-15-image-generator-voice-assistant/52533789" target="_blank" rel="noopener noreferrer">Open on CodeCanyon</a>
+            </div>
+          </article>
+
+          <article class="app-card" data-market="codecanyon" data-ai="true">
+            <div class="app-card__head">
+              <div class="app-badges">
+                <span class="badge-store">CodeCanyon</span>
+                <span class="badge-ai">Voice + PDF RAG</span>
+              </div>
+              <h3>Tooly AI: Chat, Voice &amp; PDF App</h3>
+              <p>Multi-model Flutter AI suite integrating conversational assistants, voice synthesis, PDF document RAG querying, and visual workflow tools.</p>
             </div>
             <div class="app-card__foot">
               <div class="app-card__screen compartment--wed">
-                <span class="mono-code">Audio: VAPI + ElevenLabs</span>
-                <span class="mono-code">Stack: Flutter, GetX, VectorDB</span>
+                <span class="mono-code">Item: #65301259</span>
+                <span class="mono-code">Stack: Flutter, VectorDB, Voice API</span>
               </div>
-              <a class="text-link" href="https://codecanyon.net/search/chatia%20flutter%20ai" target="_blank" rel="noopener noreferrer">View on CodeCanyon</a>
+              <a class="text-link" href="https://codecanyon.net/item/tooly-ai-chatbot-image-generator-and-pdf-tools-flutter-app/65301259" target="_blank" rel="noopener noreferrer">Open on CodeCanyon</a>
+            </div>
+          </article>
+
+          <article class="app-card" data-market="codecanyon" data-ai="true">
+            <div class="app-card__head">
+              <div class="app-badges">
+                <span class="badge-store">CodeCanyon</span>
+                <span class="badge-ai">Clean Architecture AI</span>
+              </div>
+              <h3>Chatia: Multi-Model AI Studio</h3>
+              <p>Clean-architecture Material 3 Flutter template engineered for streaming OpenAI, Claude, and Azure AI Foundry endpoints with GetX state management.</p>
+            </div>
+            <div class="app-card__foot">
+              <div class="app-card__screen compartment--fri">
+                <span class="mono-code">Item: #61680232</span>
+                <span class="mono-code">Stack: Flutter, GetX, REST Streams</span>
+              </div>
+              <a class="text-link" href="https://codecanyon.net/item/chatia-ai-chatbot-flutter-ui/61680232" target="_blank" rel="noopener noreferrer">Open on CodeCanyon</a>
+            </div>
+          </article>
+
+          <article class="app-card" data-market="codecanyon" data-ai="true">
+            <div class="app-card__head">
+              <div class="app-badges">
+                <span class="badge-store">CodeCanyon</span>
+                <span class="badge-ai">AI Quiz + 1v1 Bots</span>
+              </div>
+              <h3>Quizify: Trivia &amp; AI Quiz App</h3>
+              <p>Full Flutter application and admin panel featuring automated quiz generation, adaptive AI bot opponents, real-time 1v1 battles, and contest leaderboards.</p>
+            </div>
+            <div class="app-card__foot">
+              <div class="app-card__screen compartment--mon">
+                <span class="mono-code">Item: #61903221</span>
+                <span class="mono-code">Stack: Flutter 3.x, REST API, SQL</span>
+              </div>
+              <a class="text-link" href="https://codecanyon.net/item/quizify-trivia-flutter-quiz-app-daily-quiz-game-1v1-battles-contests-bots/61903221" target="_blank" rel="noopener noreferrer">Open on CodeCanyon</a>
             </div>
           </article>
 
@@ -1032,17 +1195,35 @@
             <div class="app-card__head">
               <div class="app-badges">
                 <span class="badge-store">CodeCanyon</span>
-                <span class="mono-code">Server-driven UI</span>
+                <span class="mono-code">Adaptive Commerce</span>
               </div>
-              <h3>HyperCart Adaptive Store</h3>
-              <p>Dynamic adaptive UI Flutter e-commerce engine that converts between grocery, pharmacy, and retail storefronts from a single JSON configuration without app-store rebuilds.</p>
+              <h3>GoGrocery: Quick-Commerce Suite</h3>
+              <p>Multi-domain Flutter delivery system with customer, driver, and store apps adaptable across grocery, pharmacy, and daily essentials storefronts.</p>
             </div>
             <div class="app-card__foot">
               <div class="app-card__screen compartment--tue">
-                <span class="mono-code">Award: Best Duo FYP 2020</span>
-                <span class="mono-code">Stack: Flutter, REST APIs, Node</span>
+                <span class="mono-code">Item: #65561987</span>
+                <span class="mono-code">Stack: Flutter, Laravel, REST APIs</span>
               </div>
-              <a class="text-link" href="https://codecanyon.net/search/flutter%20multivendor%20grocery%20pharmacy" target="_blank" rel="noopener noreferrer">View on CodeCanyon</a>
+              <a class="text-link" href="https://codecanyon.net/item/gogrocery-quick-commerce-grocery-delivery-system-with-flutter-apps-and-laravel-admin/65561987" target="_blank" rel="noopener noreferrer">Open on CodeCanyon</a>
+            </div>
+          </article>
+
+          <article class="app-card" data-market="codecanyon" data-ai="false">
+            <div class="app-card__head">
+              <div class="app-badges">
+                <span class="badge-store">CodeCanyon</span>
+                <span class="mono-code">Dynamic Store UI</span>
+              </div>
+              <h3>DTBasket: Multi-Store Delivery</h3>
+              <p>Modular Flutter e-commerce and instant delivery kit with dynamic category layouts, order routing, and unified admin management across retail verticals.</p>
+            </div>
+            <div class="app-card__foot">
+              <div class="app-card__screen compartment--thu">
+                <span class="mono-code">Item: #61247814</span>
+                <span class="mono-code">Stack: Flutter, Node/PHP, Firebase</span>
+              </div>
+              <a class="text-link" href="https://codecanyon.net/item/dtbasket-instant-grocery-daily-essentials-delivery-flutter-app-with-admin-panel-android-ios/61247814" target="_blank" rel="noopener noreferrer">Open on CodeCanyon</a>
             </div>
           </article>
 
@@ -1052,15 +1233,231 @@
                 <span class="badge-store">CodeCanyon</span>
                 <span class="mono-code">Fleet Telemetry</span>
               </div>
-              <h3>Deev Mobility &amp; Ride Kit</h3>
-              <p>Real-time ride-sharing and 3PL courier dispatch Flutter template with live WebSocket driver tracking, fare estimation, and offline-first sync (ICE 2019 Finalist Winner).</p>
+              <h3>RideX: Flutter Ride &amp; Dispatch</h3>
+              <p>Real-time ride booking and courier dispatch Flutter platform featuring live WebSocket driver tracking, route fare estimation, and dispatch admin panel.</p>
             </div>
             <div class="app-card__foot">
               <div class="app-card__screen compartment--sat">
-                <span class="mono-code">Award: ICE 2019 Finalist</span>
+                <span class="mono-code">Item: #65200207</span>
                 <span class="mono-code">Stack: Flutter, Maps SDK, Socket</span>
               </div>
-              <a class="text-link" href="https://codecanyon.net/search/flutter%20ride%20sharing%20app" target="_blank" rel="noopener noreferrer">View on CodeCanyon</a>
+              <a class="text-link" href="https://codecanyon.net/item/ridex-flutter-taxi-booking-app-with-laravel-admin-panel/65200207" target="_blank" rel="noopener noreferrer">Open on CodeCanyon</a>
+            </div>
+          </article>
+
+          <article class="app-card" data-market="codecanyon" data-ai="true">
+            <div class="app-card__head">
+              <div class="app-badges">
+                <span class="badge-store">CodeCanyon</span>
+                <span class="badge-ai">Gemini + Prompt Router</span>
+              </div>
+              <h3>Smart AI Assistant: Chat &amp; Task Bot</h3>
+              <p>Multi-domain Flutter assistant template featuring topic-routed prompt templates, streaming markdown responses, and persistent conversation history.</p>
+            </div>
+            <div class="app-card__foot">
+              <div class="app-card__screen compartment--mon">
+                <span class="mono-code">Item: #61426869</span>
+                <span class="mono-code">Stack: Flutter, Gemini API, SQLite</span>
+              </div>
+              <a class="text-link" href="https://codecanyon.net/item/ai-assistant-smart-chat-bot-application/61426869" target="_blank" rel="noopener noreferrer">Open on CodeCanyon</a>
+            </div>
+          </article>
+
+          <article class="app-card" data-market="codecanyon" data-ai="true">
+            <div class="app-card__head">
+              <div class="app-badges">
+                <span class="badge-store">CodeCanyon</span>
+                <span class="badge-ai">Adaptive Assessment</span>
+              </div>
+              <h3>EndlessIQ: Flutter Quiz &amp; Admin Kit</h3>
+              <p>Full-stack Flutter exam and trivia application backed by a Laravel admin panel with automated question bank imports, timed tests, and analytics.</p>
+            </div>
+            <div class="app-card__foot">
+              <div class="app-card__screen compartment--thu">
+                <span class="mono-code">Item: #64576030</span>
+                <span class="mono-code">Stack: Flutter, Laravel, MySQL</span>
+              </div>
+              <a class="text-link" href="https://codecanyon.net/item/endlessiq-flutter-quiz-app-with-laravel-admin-panel/64576030" target="_blank" rel="noopener noreferrer">Open on CodeCanyon</a>
+            </div>
+          </article>
+
+          <article class="app-card" data-market="codecanyon" data-ai="false">
+            <div class="app-card__head">
+              <div class="app-badges">
+                <span class="badge-store">CodeCanyon</span>
+                <span class="mono-code">Mobility &amp; Dispatch</span>
+              </div>
+              <h3>MitraRide: Ride Booking &amp; Firebase Kit</h3>
+              <p>On-demand Flutter ride-hailing and driver dispatch template with live geolocation routing, wallet settlements, and Firebase real-time sync.</p>
+            </div>
+            <div class="app-card__foot">
+              <div class="app-card__screen compartment--tue">
+                <span class="mono-code">Item: #62990329</span>
+                <span class="mono-code">Stack: Flutter, Firebase, Google Maps</span>
+              </div>
+              <a class="text-link" href="https://codecanyon.net/item/mitraride-ride-booking-flutter-app-with-admin-panel-firebase-backend/62990329" target="_blank" rel="noopener noreferrer">Open on CodeCanyon</a>
+            </div>
+          </article>
+
+          <article class="app-card" data-market="internal" data-ai="true">
+            <div class="app-card__head">
+              <div class="app-badges">
+                <span class="badge-store">Internal Enterprise</span>
+                <span class="badge-ai">Process &amp; Anomaly AI</span>
+              </div>
+              <h3>Mashreq OpsPulse: Executive Companion</h3>
+              <p>Dedicated internal mobile app for banking department heads in Dubai to inspect real-time customer journey bottlenecks, anomaly alerts, and AI operational recommendations.</p>
+            </div>
+            <div class="app-card__foot">
+              <div class="app-card__screen compartment--thu">
+                <span class="mono-code">Client: Mashreq Bank UAE</span>
+                <span class="mono-code">Stack: Flutter, Azure AI, Power BI</span>
+              </div>
+              <span class="mono-code">Private MDM build (No public URL)</span>
+            </div>
+          </article>
+
+          <article class="app-card" data-market="internal" data-ai="true">
+            <div class="app-card__head">
+              <div class="app-badges">
+                <span class="badge-store">Internal Enterprise</span>
+                <span class="badge-ai">Credit Risk LLM</span>
+              </div>
+              <h3>CreditGuard: Field Underwriting App</h3>
+              <p>Internal tablet and mobile tool for commercial credit officers in Riyadh to run on-site loan eligibility scoring, automated credit memo drafting, and risk verification.</p>
+            </div>
+            <div class="app-card__foot">
+              <div class="app-card__screen compartment--wed">
+                <span class="mono-code">Client: Banking / McKinsey KSA</span>
+                <span class="mono-code">Stack: Flutter, Python ML, LangChain</span>
+              </div>
+              <span class="mono-code">Private enterprise build (No public URL)</span>
+            </div>
+          </article>
+
+          <article class="app-card" data-market="internal" data-ai="true">
+            <div class="app-card__head">
+              <div class="app-badges">
+                <span class="badge-store">Internal Enterprise</span>
+                <span class="badge-ai">Azure AI Foundry RAG</span>
+              </div>
+              <h3>Ooredoo FieldRAG: NOC Technician Copilot</h3>
+              <p>Dedicated internal mobile knowledge assistant for telecom field engineers in Doha, retrieving SOPs, ticket resolutions, and network schematics via agentic RAG.</p>
+            </div>
+            <div class="app-card__foot">
+              <div class="app-card__screen compartment--fri">
+                <span class="mono-code">Client: Ooredoo Qatar</span>
+                <span class="mono-code">Stack: Flutter, Azure Foundry, FastAPI</span>
+              </div>
+              <span class="mono-code">Private intranet build (No public URL)</span>
+            </div>
+          </article>
+
+          <article class="app-card" data-market="internal" data-ai="true">
+            <div class="app-card__head">
+              <div class="app-badges">
+                <span class="badge-store">Internal Enterprise</span>
+                <span class="badge-ai">VLM + Clinical LLM</span>
+              </div>
+              <h3>Juntendo Bedside VLM: Ward Triage</h3>
+              <p>Internal clinical mobile application deployed for hospital physicians to perform VLM diagnostic image triage alongside structured LLM patient consultation intake.</p>
+            </div>
+            <div class="app-card__foot">
+              <div class="app-card__screen compartment--mon">
+                <span class="mono-code">Client: Juntendo Univ. Medical System</span>
+                <span class="mono-code">Stack: Flutter, FastVLM, GPT-4V</span>
+              </div>
+              <span class="mono-code">Private clinical build (No public URL)</span>
+            </div>
+          </article>
+
+          <article class="app-card" data-market="internal" data-ai="true">
+            <div class="app-card__head">
+              <div class="app-badges">
+                <span class="badge-store">Internal Enterprise</span>
+                <span class="badge-ai">Predictive 3PL Agents</span>
+              </div>
+              <h3>IZBA FreightVerify: Warehouse &amp; SLA Ops</h3>
+              <p>Dedicated internal logistics operations app for 3PL and 4PL warehouse supervisors to resolve entity mismatches, audit carrier SLA anomalies, and track demand forecasts.</p>
+            </div>
+            <div class="app-card__foot">
+              <div class="app-card__screen compartment--tue">
+                <span class="mono-code">Client: IZBA USA Logistics</span>
+                <span class="mono-code">Stack: Flutter, PySpark, Knowledge Graph</span>
+              </div>
+              <span class="mono-code">Private logistics build (No public URL)</span>
+            </div>
+          </article>
+
+          <article class="app-card" data-market="internal" data-ai="true">
+            <div class="app-card__head">
+              <div class="app-badges">
+                <span class="badge-store">Internal Enterprise</span>
+                <span class="badge-ai">VAPI + ElevenLabs Voice</span>
+              </div>
+              <h3>NCAI DeskVoice: Campus Triage Client</h3>
+              <p>Internal university help-desk mobile voice assistant enabling low-latency spoken query resolution, department routing, and automated support ticket creation.</p>
+            </div>
+            <div class="app-card__foot">
+              <div class="app-card__screen compartment--sat">
+                <span class="mono-code">Client: NCAI, NUST Islamabad</span>
+                <span class="mono-code">Stack: Flutter, GPT-4, ElevenLabs, VAPI</span>
+              </div>
+              <span class="mono-code">Private campus build (No public URL)</span>
+            </div>
+          </article>
+
+          <article class="app-card" data-market="internal" data-ai="true">
+            <div class="app-card__head">
+              <div class="app-badges">
+                <span class="badge-store">Internal Enterprise</span>
+                <span class="badge-ai">Forecasting + E2E BI</span>
+              </div>
+              <h3>Mashreq DeptFlow: E2E Department Pulse</h3>
+              <p>Dedicated internal tablet and mobile app for cross-departmental operations leads in Dubai, surfacing predictive trend forecasts and automated workflow actions.</p>
+            </div>
+            <div class="app-card__foot">
+              <div class="app-card__screen compartment--thu">
+                <span class="mono-code">Client: Mashreq Bank UAE</span>
+                <span class="mono-code">Stack: Flutter, Fabric, Databricks</span>
+              </div>
+              <span class="mono-code">Private MDM build (No public URL)</span>
+            </div>
+          </article>
+
+          <article class="app-card" data-market="internal" data-ai="true">
+            <div class="app-card__head">
+              <div class="app-badges">
+                <span class="badge-store">Internal Enterprise</span>
+                <span class="badge-ai">RLHF + Urdu LLM</span>
+              </div>
+              <h3>UrduCorpus: Field RLHF &amp; Annotator</h3>
+              <p>Internal mobile curation and preference-ranking app used by R&amp;D linguists to evaluate low-resource Urdu LLM generations and collect regional speech samples.</p>
+            </div>
+            <div class="app-card__foot">
+              <div class="app-card__screen compartment--wed">
+                <span class="mono-code">Client: IRL, NCAI NUST</span>
+                <span class="mono-code">Stack: Flutter, PyTorch, FastAPI</span>
+              </div>
+              <span class="mono-code">Private lab build (No public URL)</span>
+            </div>
+          </article>
+
+          <article class="app-card" data-market="internal" data-ai="true">
+            <div class="app-card__head">
+              <div class="app-badges">
+                <span class="badge-store">Internal Enterprise</span>
+                <span class="badge-ai">MCP Code Security</span>
+              </div>
+              <h3>SecCode Gate: Agentic PR Auditor</h3>
+              <p>Internal engineering mobile companion for reviewing autonomous MCP coding-agent pull requests, static/dynamic security test alerts, and sandbox verification logs.</p>
+            </div>
+            <div class="app-card__foot">
+              <div class="app-card__screen compartment--fri">
+                <span class="mono-code">Client: IRL DevOps, NCAI NUST</span>
+                <span class="mono-code">Stack: Flutter, MCP, Docker, REST</span>
+              </div>
+              <span class="mono-code">Private DevOps build (No public URL)</span>
             </div>
           </article>
         </div>
