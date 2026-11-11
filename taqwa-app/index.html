@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taqwa | Islamic Prayer Times, Quran, Azan &amp; Qibla Companion</title>
+  <meta name="description" content="Taqwa is an offline-first spiritual companion app featuring astronomical prayer algorithms, gyro Qibla compass, complete Quran with audio, and zero telemetry tracking. Developed by Muhammad Raheel Anwar.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@700&family=Instrument+Sans:wght@400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script>document.documentElement.classList.add('js');</script>
+  <style>
+/* Hallmark · shape: Workbench · genre: modern-minimal · theme: custom (Astryx-inspired carbon & slate-navy) · job: product
+ * axes: dark/grotesk-sans/cool · posture: committed · contrast: pass · v2.0.0 */
+@import url("../tokens.css");
+@import url("../base.css");
+
+.site-header {
+  position: sticky;
+  top: var(--space-md);
+  z-index: var(--z-sticky-nav);
+  padding-inline: var(--gutter);
+}
+
+.nav-pill {
+  max-width: var(--container);
+  margin-inline: auto;
+  min-height: 64px;
+  padding: var(--space-xs) var(--space-lg);
+  background: var(--color-nav-bg);
+  color: var(--color-ink);
+  border: var(--rule-hair) solid var(--color-rule);
+  border-radius: var(--radius-pill);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-lg);
+}
+
+.brand {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-lg);
+  letter-spacing: var(--tracking-display);
+  text-decoration: none;
+  white-space: nowrap;
+  color: var(--color-ink);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  font-size: var(--text-sm);
+  color: var(--color-ink-2);
+  text-decoration: none;
+  padding: var(--space-2xs) var(--space-xs);
+  border-radius: var(--radius-input);
+  transition: color var(--dur-short) var(--ease-out), background-color var(--dur-short) var(--ease-out);
+}
+
+.nav-links a:hover {
+  color: var(--color-ink);
+  background: var(--color-paper-2);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  min-height: 48px;
+  padding: 0 var(--space-lg);
+  border: var(--rule-hair) solid var(--color-rule-strong);
+  border-radius: var(--radius-input);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--text-md);
+  line-height: 1;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+  background: var(--color-clear);
+  color: var(--color-ink);
+  transition: transform var(--dur-micro) var(--ease-out), background-color var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out);
+}
+
+.btn:hover {
+  background: var(--color-surface-well);
+  border-color: var(--color-ink);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn--primary {
+  background: var(--color-accent);
+  color: var(--color-accent-ink);
+  border-color: var(--color-accent);
+}
+
+.btn--primary:hover {
+  background: var(--color-accent-deep);
+  border-color: var(--color-accent-deep);
+}
+
+.btn--nav {
+  min-height: 40px;
+  padding: 0 var(--space-md);
+  font-size: var(--text-sm);
+}
+
+.hero-taqwa {
+  padding-block: var(--space-2xl) var(--section-gap);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+  gap: var(--space-2xl);
+  align-items: center;
+}
+
+.hero-copy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.hero-copy h1 {
+  font-size: var(--text-display-s);
+}
+
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  align-items: center;
+}
+
+.badge-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-3xs) var(--space-xs);
+  border-radius: var(--radius-input);
+  border: var(--rule-hair) solid var(--color-rule);
+  background: var(--color-surface-inset);
+  color: var(--color-ink-2);
+  font-size: var(--text-xs);
+  font-weight: 500;
+}
+
+.badge-tag--accent {
+  border-color: var(--color-signal-border);
+  background: var(--color-accent-soft);
+  color: var(--color-ink);
+}
+
+.beacon {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: var(--text-xs);
+}
+
+.beacon__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-pill);
+  background: var(--color-success);
+  position: relative;
+  flex-shrink: 0;
+}
+
+.beacon__dot::after {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-success);
+  animation: beacon-wave 2.4s var(--ease-out) infinite;
+}
+
+@keyframes beacon-wave {
+  0% { transform: scale(0.85); opacity: 0.95; }
+  70% { transform: scale(2.4); opacity: 0; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .beacon__dot::after { animation: none; }
+}
+
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  margin-top: var(--space-xs);
+}
+
+.hero-actions__btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  align-items: center;
+}
+
+/* Phone Mockup */
+.taqwa-phone {
+  background: var(--color-surface-inset);
+  color: var(--color-ink);
+  border: var(--rule-hair) solid var(--color-rule-strong);
+  border-radius: var(--radius-card);
+  padding: var(--space-md);
+  box-shadow: var(--shadow-lift);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  max-width: 440px;
+  margin-inline: auto;
+  width: 100%;
+}
+
+.phone-status-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--text-xs);
+  color: var(--color-muted);
+  padding-inline: var(--space-xs);
+  border-bottom: var(--rule-hair) solid var(--color-rule);
+  padding-bottom: var(--space-xs);
+}
+
+.phone-hero-card {
+  padding: var(--space-md);
+  border-radius: var(--radius-input);
+  background: var(--color-surface-well);
+  color: var(--color-ink);
+  border: var(--rule-hair) solid var(--color-signal-border);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.phone-hero-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.phone-time-big {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-ink);
+}
+
+.seg {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: var(--space-2xs);
+  padding: var(--space-2xs);
+  background: var(--color-surface-card);
+  color: var(--color-ink);
+  border-radius: var(--radius-input);
+  border: var(--rule-hair) solid var(--color-rule);
+  max-width: 100%;
+}
+
+.seg button {
+  min-height: 36px;
+  padding: 0 var(--space-sm);
+  border: var(--rule-hair) solid var(--color-clear);
+  border-radius: var(--radius-input);
+  background: var(--color-clear);
+  color: var(--color-ink-2);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: border-color var(--dur-short) var(--ease-out), color var(--dur-short) var(--ease-out);
+}
+
+.seg button:hover {
+  color: var(--color-ink);
+}
+
+.seg button[aria-selected="true"] {
+  border-color: var(--color-ink);
+  color: var(--color-ink);
+}
+
+.phone-view {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.phone-prayer-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+}
+
+.phone-prayer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-2xs) var(--space-xs);
+  border-radius: var(--radius-input);
+  background: var(--color-surface-card);
+  color: var(--color-ink);
+  border: var(--rule-hair) solid var(--color-rule);
+  font-size: var(--text-sm);
+}
+
+.phone-prayer-row--active {
+  border-color: var(--color-signal);
+  background: var(--color-surface-well);
+}
+
+.qibla-dial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-lg);
+  border-radius: var(--radius-card);
+  background: var(--color-surface-card);
+  color: var(--color-ink);
+  border: var(--rule-hair) solid var(--color-rule);
+  text-align: center;
+  gap: var(--space-xs);
+}
+
+.qibla-compass-circle {
+  width: 110px;
+  height: 110px;
+  border-radius: var(--radius-pill);
+  border: 2px dashed var(--color-signal-border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-surface-inset);
+  color: var(--color-ink);
+  margin-block: var(--space-xs);
+}
+
+.tasbih-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-lg);
+  border-radius: var(--radius-card);
+  background: var(--color-surface-card);
+  color: var(--color-ink);
+  border: var(--rule-hair) solid var(--color-rule);
+  text-align: center;
+}
+
+.tasbih-btn {
+  width: 88px;
+  height: 88px;
+  border-radius: var(--radius-pill);
+  border: 2px solid var(--color-signal);
+  background: var(--color-surface-well);
+  color: var(--color-ink);
+  font-size: var(--text-2xl);
+  font-family: var(--font-display);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform var(--dur-micro) var(--ease-out), background-color var(--dur-short) var(--ease-out);
+}
+
+.tasbih-btn:hover {
+  background: var(--color-surface-inset);
+}
+
+.tasbih-btn:active {
+  transform: scale(0.92);
+}
+
+/* Features Grid */
+.sec-features {
+  padding-block: var(--section-gap);
+  background: var(--color-paper-2);
+  border-top: var(--rule-hair) solid var(--color-rule);
+  border-bottom: var(--rule-hair) solid var(--color-rule);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-lg);
+}
+
+.feat-card {
+  padding: var(--space-lg);
+  border-radius: var(--radius-card);
+  background: var(--color-surface-card);
+  color: var(--color-ink);
+  border: var(--rule-hair) solid var(--color-rule);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  transition: transform var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out), box-shadow var(--dur-short) var(--ease-out);
+}
+
+.feat-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-signal-border);
+  box-shadow: var(--shadow-lift);
+}
+
+.feat-card h3 {
+  font-size: var(--text-title);
+  line-height: 1.25;
+}
+
+.feat-card p {
+  font-size: var(--text-sm);
+  color: var(--color-ink-2);
+  line-height: 1.55;
+}
+
+.mono-code {
+  font-family: var(--font-outlier);
+  font-size: var(--text-sm);
+  font-variant-numeric: tabular-nums;
+  color: var(--color-ink-2);
+}
+
+.site-footer {
+  padding-block: var(--space-2xl);
+  background: var(--color-paper-3);
+  color: var(--color-ink);
+  border-top: var(--rule-hair) solid var(--color-rule);
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  font-size: var(--text-sm);
+  color: var(--color-ink-2);
+}
+
+.footer-inner nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+.footer-inner a {
+  color: var(--color-ink);
+  text-decoration: none;
+}
+
+.footer-inner a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 60rem) {
+  .hero-grid,
+  .features-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-xl);
+  }
+  .nav-links {
+    display: none;
+  }
+}
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="nav-pill" aria-label="Taqwa application navigation">
+      <a class="brand" href="../index.html">Raheel Anwar</a>
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="privacy-policy.html">Privacy</a></li>
+        <li><a href="terms-and-conditions.html">Terms</a></li>
+        <li><a href="../index.html">Portfolio</a></li>
+      </ul>
+      <a class="btn" href="../index.html">Back to portfolio</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero-taqwa">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="hero-badges">
+            <span class="badge-tag">Self-published mobile app</span>
+            <span class="badge-tag badge-tag--accent">Google Play Store</span>
+            <span class="beacon">
+              <span class="beacon__dot"></span>
+              <span class="mono-code">com.raheelism.taqwa</span>
+            </span>
+          </div>
+
+          <h1>Spiritual timing and Holy Quran with zero telemetry.</h1>
+          <p class="lead">Taqwa delivers mathematically rigorous offline prayer calculation algorithms, real-time gyro Qibla compass alignment, complete Holy Quran recitations, and authentic daily Athkar.</p>
+
+          <div class="hero-actions">
+            <div class="hero-actions__btns">
+              <a class="btn btn--primary" href="https://play.google.com/store/apps/details?id=com.raheelism.taqwa" target="_blank" rel="noopener noreferrer">Explore on Google Play</a>
+              <a class="btn" href="privacy-policy.html">Privacy policy</a>
+              <a class="btn" href="terms-and-conditions.html">Terms</a>
+            </div>
+            <span class="mono-code">Stack: Flutter, Dart, SQLite, SensorManager, Clean Architecture</span>
+          </div>
+        </div>
+
+        <div class="taqwa-phone" aria-label="Interactive Taqwa mobile app preview">
+          <div class="phone-status-bar">
+            <span class="mono-code">07:05</span>
+            <span>Islamabad (33.68° N, 73.04° E)</span>
+            <span class="mono-code">100%</span>
+          </div>
+
+          <div class="phone-hero-card">
+            <div class="phone-hero-top">
+              <span class="badge-tag badge-tag--accent">Upcoming Salah</span>
+              <span class="mono-code">11 Sha’ban 1448</span>
+            </div>
+            <div class="phone-hero-top">
+              <div>
+                <span class="phone-time-big">Asr 15:22</span>
+                <p class="mono-code">Next prayer in 01h 38m</p>
+              </div>
+              <span class="badge-tag">Azan active</span>
+            </div>
+          </div>
+
+          <div class="seg" role="tablist" aria-label="Taqwa preview modes">
+            <button type="button" role="tab" aria-selected="true" id="tab-pt-salah" aria-controls="view-pt-salah">Salah times</button>
+            <button type="button" role="tab" aria-selected="false" id="tab-pt-qibla" aria-controls="view-pt-qibla" tabindex="-1">Qibla compass</button>
+            <button type="button" role="tab" aria-selected="false" id="tab-pt-tasbih" aria-controls="view-pt-tasbih" tabindex="-1">Daily Athkar</button>
+          </div>
+
+          <div id="view-pt-salah" role="tabpanel" aria-labelledby="tab-pt-salah" class="phone-view">
+            <div class="phone-prayer-list">
+              <div class="phone-prayer-row">
+                <span>Fajr</span>
+                <span class="mono-code">05:14</span>
+                <span class="mono-code">Passed</span>
+              </div>
+              <div class="phone-prayer-row">
+                <span>Sunrise</span>
+                <span class="mono-code">06:38</span>
+                <span class="mono-code">Passed</span>
+              </div>
+              <div class="phone-prayer-row">
+                <span>Dhuhr</span>
+                <span class="mono-code">12:08</span>
+                <span class="mono-code">Passed</span>
+              </div>
+              <div class="phone-prayer-row phone-prayer-row--active">
+                <span><strong>Asr</strong></span>
+                <span class="mono-code"><strong>15:22</strong></span>
+                <span class="badge-tag badge-tag--accent">Upcoming</span>
+              </div>
+              <div class="phone-prayer-row">
+                <span>Maghrib</span>
+                <span class="mono-code">17:45</span>
+                <span class="mono-code">Next</span>
+              </div>
+              <div class="phone-prayer-row">
+                <span>Isha</span>
+                <span class="mono-code">19:05</span>
+                <span class="mono-code">Night</span>
+              </div>
+            </div>
+          </div>
+
+          <div id="view-pt-qibla" role="tabpanel" aria-labelledby="tab-pt-qibla" class="phone-view" hidden>
+            <div class="qibla-dial">
+              <div class="qibla-compass-circle">
+                <span class="mono-code">258.4°</span>
+                <span>WNW</span>
+              </div>
+              <strong>Direct Qibla to Holy Kaaba</strong>
+              <p class="mono-code">Distance: 3,540 km · Azimuth bearing verified</p>
+              <span class="badge-tag">Magnetometer fused</span>
+            </div>
+          </div>
+
+          <div id="view-pt-tasbih" role="tabpanel" aria-labelledby="tab-pt-tasbih" class="phone-view" hidden>
+            <div class="tasbih-box">
+              <p>سُبْحَانَ اللَّهِ وَبِحَمْدِهِ</p>
+              <span class="mono-code">Subhan-Allahi wa bihamdihi</span>
+              <button type="button" id="tasbih-btn" class="tasbih-btn" aria-label="Tap to count"><span id="tasbih-display">33</span></button>
+              <div style="display:flex; gap:var(--space-xs);">
+                <button type="button" id="tasbih-reset" class="btn btn--nav">Reset</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="sec-features">
+      <div class="container">
+        <div class="head-split" style="margin-bottom:var(--space-xl);">
+          <h2>Engineered for accuracy, privacy, and reverence.</h2>
+          <p class="lead">Built ground-up with mathematical rigor and offline SQLite storage so your spiritual data never leaves your device.</p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feat-card">
+            <h3>Astronomical solar engine</h3>
+            <p>Calculates solar zenith angles and equation of time on-device across MWL, ISNA, Umm Al-Qura, Diyanet, Egyptian, and Karachi standards without network latency.</p>
+          </div>
+          <div class="feat-card">
+            <h3>Sensor-fused Qibla compass</h3>
+            <p>Direct great-circle azimuth calculation to Kaaba (258° WNW) integrating magnetometer, accelerometer, and true-north geomagnetic declination.</p>
+          </div>
+          <div class="feat-card">
+            <h3>Holy Quran &amp; offline audio</h3>
+            <p>Complete 114 Surahs with Uthmani typography, translations, Ayah bookmarks, and offline streaming cache of renowned Qaris.</p>
+          </div>
+          <div class="feat-card">
+            <h3>Authentic daily Athkar</h3>
+            <p>Categorized morning and evening supplications from Hisn al-Muslim with a tactile digital Tasbih counter and haptic feedback.</p>
+          </div>
+          <div class="feat-card">
+            <h3>Zero data harvesting</h3>
+            <p>Location coordinates are evaluated strictly in device RAM for solar trigonometry. Zero location logs or advertising IDs are ever uploaded.</p>
+          </div>
+          <div class="feat-card">
+            <h3>Exact Azan alarms</h3>
+            <p>Reliable on-device alarm scheduling ensures timely Azan audio alerts even through Android Doze mode and battery optimizations.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>Taqwa Mobile Application · Muhammad Raheel Anwar</span>
+      <nav aria-label="Taqwa footer links">
+        <a href="privacy-policy.html">Privacy policy</a>
+        <a href="terms-and-conditions.html">Terms and conditions</a>
+        <a href="../index.html">Developer portfolio</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('[role="tablist"]').forEach((tablist) => {
+      const tabs = Array.from(tablist.querySelectorAll('[role="tab"]'));
+      tabs.forEach((tab, idx) => {
+        tab.addEventListener('click', () => {
+          tabs.forEach((t) => {
+            const selected = t === tab;
+            t.setAttribute('aria-selected', selected ? 'true' : 'false');
+            t.tabIndex = selected ? 0 : -1;
+            const panelId = t.getAttribute('aria-controls');
+            if (panelId) {
+              const panel = document.getElementById(panelId);
+              if (panel) panel.hidden = !selected;
+            }
+          });
+        });
+        tab.addEventListener('keydown', (e) => {
+          if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+            e.preventDefault();
+            const next = e.key === 'ArrowRight' ? (idx + 1) % tabs.length : (idx - 1 + tabs.length) % tabs.length;
+            tabs[next].focus();
+            tabs[next].click();
+          }
+        });
+      });
+    });
+
+    const tasbihBtn = document.getElementById('tasbih-btn');
+    const tasbihDisplay = document.getElementById('tasbih-display');
+    const tasbihReset = document.getElementById('tasbih-reset');
+    let tasbihCount = 33;
+    if (tasbihBtn && tasbihDisplay) {
+      tasbihBtn.addEventListener('click', () => {
+        tasbihCount++;
+        tasbihDisplay.textContent = tasbihCount;
+      });
+    }
+    if (tasbihReset && tasbihDisplay) {
+      tasbihReset.addEventListener('click', () => {
+        tasbihCount = 0;
+        tasbihDisplay.textContent = '0';
+      });
+    }
+  </script>
+</body>
+
+</html>
